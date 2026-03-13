@@ -1,13 +1,15 @@
-$colors: red, blue, black, green, white, yellow, gray;
+$color: red, blue, black, green, white, yellow, gray;
 $display: inline, flex, grid, none, block;
 $justify: center, space-between, space-around, space-evenly, start, end;
 $align: center, start, end;
 $max-width:500,1200,1500,1750;
+$ul:none;
+ $gaps: 0, 5, 10, 20, 40;
 
 $colorMap: (
     myred: #d41515,
     mygreen: #33b959,
-    myblue: #3b15d4,
+    myblue: #00486D,
 );
 
 @for $i from 1 through 100{
@@ -50,9 +52,15 @@ $colorMap: (
     .h-#{$i}{
         width: #{$i*10}px;
     }
+    .br-#{$i}{
+        border-radius: #{$i}px;
+    }
+    .bn{
+        border: none;
+    }
 }
 
-@each $i in $colors{
+@each $i in $color{
     .text-#{$i}{
         color: $i;
     }
@@ -60,18 +68,34 @@ $colorMap: (
         background-color: $i;
     }
 } 
+@each $i in $ul{
+    .st-#{$i}{
+        list-style: $i;
+    }
+    .bg-#{$i}{
+        background-color: $i;
+    }
+} 
+@each $name, $color in $colorMap {
+  .text-#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
 @each $i in  $display{
     .#{$i}{
         display: $i;
     }
 }
 @each $i in  $justify{
-    .justify-#{$i}{
+    .j-#{$i}{
         justify-content: $i;
     }
 }
 @each $i in  $align{
-    .align-#{$i}{
+    .al-#{$i}{
         align-items: $i;
     }
 }
@@ -79,4 +103,9 @@ $colorMap: (
     .mx-#{$i}{
         max-width: $i;
     }
+}
+@each $g in $gaps {
+  .gap-#{$g} {
+    gap: #{$g}px;
+  }
 }
