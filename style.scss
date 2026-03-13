@@ -1,0 +1,82 @@
+$colors: red, blue, black, green, white, yellow, gray;
+$display: inline, flex, grid, none, block;
+$justify: center, space-between, space-around, space-evenly, start, end;
+$align: center, start, end;
+$max-width:500,1200,1500,1750;
+
+$colorMap: (
+    myred: #d41515,
+    mygreen: #33b959,
+    myblue: #3b15d4,
+);
+
+@for $i from 1 through 100{
+    .text-#{$i}{
+        font-size: #{$i}px;
+    }
+    .m-#{$i}{
+        margin: #{$i*5}px;
+    }
+    .ml-#{$i}{
+        margin-left: #{$i*5}px;
+    }
+    .mr-#{$i}{
+        margin-right: #{$i*5}px;
+    }
+    .mb-#{$i}{
+        margin-bottom: #{$i*5}px;
+    }
+    .mt-#{$i}{
+        margin-top: #{$i*5}px;
+    }
+    .p-#{$i}{
+        padding: #{$i*5}px;
+    }
+    .pl-#{$i}{
+        padding-left: #{$i*5}px;
+    }
+    .pr-#{$i}{
+        padding-right: #{$i*5}px;
+    }
+    .pb-#{$i}{
+        padding-bottom: #{$i*5}px;
+    }
+    .pt-#{$i}{
+        padding-top: #{$i*5}px;
+    }
+    .w-#{$i}{
+        width: #{$i*20}px;
+    }
+    .h-#{$i}{
+        width: #{$i*10}px;
+    }
+}
+
+@each $i in $colors{
+    .text-#{$i}{
+        color: $i;
+    }
+    .bg-#{$i}{
+        background-color: $i;
+    }
+} 
+@each $i in  $display{
+    .#{$i}{
+        display: $i;
+    }
+}
+@each $i in  $justify{
+    .justify-#{$i}{
+        justify-content: $i;
+    }
+}
+@each $i in  $align{
+    .align-#{$i}{
+        align-items: $i;
+    }
+}
+@each $i in  $max-width{
+    .mx-#{$i}{
+        max-width: $i;
+    }
+}
