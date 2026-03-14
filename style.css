@@ -15334,6 +15334,14 @@
   list-style: none;
 }
 
+.text-mysky {
+  color: #E4ECF0;
+}
+
+.bg-mysky {
+  background-color: #E4ECF0;
+}
+
 .text-myred {
   color: #d41515;
 }
