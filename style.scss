@@ -6,6 +6,7 @@ $max-width:500,1200,1500,1750;
 $ul:none;
 $position: relative, absolute;
 $gaps: 0, 5, 10, 20, 40;
+$shadow:3px 6px 9px 5px gray;
 
 $colorMap: (
     mysky:#E4ECF0,
@@ -13,7 +14,9 @@ $colorMap: (
     mygreen: #33b959,
     myblue: #00486D,
 );
-
+.box{
+    box-shadow: $shadow;
+}
 @for $i from -100 through 100{
 
     
