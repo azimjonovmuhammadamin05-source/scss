@@ -4,7 +4,8 @@ $justify: center, space-between, space-around, space-evenly, start, end;
 $align: center, start, end;
 $max-width:500,1200,1500,1750;
 $ul:none;
- $gaps: 0, 5, 10, 20, 40;
+$position: relative, absolute;
+$gaps: 0, 5, 10, 20, 40;
 
 $colorMap: (
     myred: #d41515,
@@ -12,7 +13,21 @@ $colorMap: (
     myblue: #00486D,
 );
 
-@for $i from 1 through 100{
+@for $i from -100 through 100{
+
+    
+    .pst-#{$i}{
+        top: #{$i}px;
+    }
+    .psb-#{$i}{
+        bottom: #{$i}px;
+    }
+    .psr-#{$i}{
+        right: #{$i}px;
+    }
+    .psl-#{$i}{
+        left: #{$i}px;
+    }
     .text-#{$i}{
         font-size: #{$i}px;
     }
@@ -50,7 +65,7 @@ $colorMap: (
         width: #{$i*20}px;
     }
     .h-#{$i}{
-        width: #{$i*10}px;
+        height: #{$i*10}px;
     }
     .br-#{$i}{
         border-radius: #{$i}px;
@@ -72,9 +87,7 @@ $colorMap: (
     .st-#{$i}{
         list-style: $i;
     }
-    .bg-#{$i}{
-        background-color: $i;
-    }
+    
 } 
 @each $name, $color in $colorMap {
   .text-#{$name} {
@@ -101,11 +114,17 @@ $colorMap: (
 }
 @each $i in  $max-width{
     .mx-#{$i}{
-        max-width: $i;
+        max-width: #{$i}px;
+        margin: auto;
     }
 }
 @each $g in $gaps {
   .gap-#{$g} {
     gap: #{$g}px;
   }
+}
+@each $i in $position {
+  .ps-#{$i}{
+        position: $i;
+    }
 }
